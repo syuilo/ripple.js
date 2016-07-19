@@ -5,11 +5,6 @@ ripple.js
 
 Ripple effects
 
-## Usage
-``` javascript
-rndstr(opts)
-```
-
 ## License
 [MIT](LICENSE)
 
