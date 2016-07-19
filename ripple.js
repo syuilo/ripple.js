@@ -1,7 +1,7 @@
 /**
  * ripple.js
  *
- * @version  0.0.1
+ * @version  0.0.2
  * @url https://github.com/syuilo/ripple.js
  *
  * Copyright 2016 syuilo.
@@ -22,12 +22,12 @@
 
 	// <script>
 	} else {
-		window.WavesEffect = definition();
+		window.Ripple = definition();
 	}
 })(function() {
 	'use strict';
 
-	var WavesEffect = function WavesEffect(){};
+	var Ripple = function Ripple(){};
 
 	function distance(p, q) {
 		var sqrt = Math.sqrt, pow = Math.pow;
@@ -61,7 +61,7 @@
 			target.style.position = 'relative';
 
 			var rippleContainer = document.createElement('div');
-			rippleContainer.className = 'waveseffect-ripple-container';
+			rippleContainer.className = 'Ripple-ripple-container';
 			rippleContainer.style.position = 'absolute';
 			rippleContainer.style.top = '0';
 			rippleContainer.style.left = '0';
@@ -71,7 +71,7 @@
 			rippleContainer.style.pointerEvents = 'none';
 
 			var ripple = document.createElement('div');
-			ripple.className = 'waveseffect-ripple';
+			ripple.className = 'Ripple-ripple';
 			ripple.style.position = 'absolute';
 			ripple.style.top = (event.clientY - targetY - 1).toString() + 'px';
 			ripple.style.left = (event.clientX - targetX - 1).toString() + 'px';
@@ -107,10 +107,10 @@
 		}, false);
 	}
 
-	WavesEffect.attachToClass = function(className) {
+	Ripple.attachToClass = function(className) {
 		var attachees = document.getElementsByClassName(className);
 		Array.prototype.forEach.call(attachees, init);
 	};
 
-	return WavesEffect;
+	return Ripple;
 });
